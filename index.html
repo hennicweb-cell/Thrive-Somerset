@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raise + Recruit &mdash; Thrive Fundraising Manager Briefing Notes</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2c2c2c;
+    background: #f5f5f3;
+  }
+
+  .header {
+    background: #1B2B3B;
+    padding: 48px 64px 40px;
+  }
+  .header .brand strong {
+    color: #fff;
+    font-size: 22px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .header .brand span {
+    color: #7a95a8;
+    font-size: 13px;
+  }
+  .header .role-label {
+    margin-top: 32px;
+    font-size: 13px;
+    color: #8fa3b3;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .header h1 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: #fff;
+    margin-top: 8px;
+    line-height: 1.2;
+  }
+  .header .org {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #E87722;
+    font-style: italic;
+  }
+  .header .meta {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #7a95a8;
+  }
+
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  section {
+    background: #fff;
+    border-radius: 4px;
+    padding: 36px 48px;
+    margin-top: 28px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1B2B3B;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #E87722;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1B2B3B;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  p { margin-bottom: 14px; color: #333; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { margin: 8px 0 16px 0; padding-left: 20px; }
+  li { margin-bottom: 8px; color: #333; padding-left: 4px; }
+  li::marker { color: #E87722; }
+
+  /* Callout box */
+  .callout {
+    display: flex;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .callout-bar { width: 6px; background: #E87722; flex-shrink: 0; }
+  .callout-body { background: #FFF4EC; padding: 16px 20px; flex: 1; }
+  .callout-body .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #E87722;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .callout-body p { font-size: 14px; color: #444; margin: 0; }
+
+  /* Info table */
+  .info-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .info-table td {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+  .info-table td:first-child {
+    font-weight: 700;
+    color: #1B2B3B;
+    background: #f5f5f3;
+    width: 220px;
+    white-space: nowrap;
+  }
+  .info-table tr:last-child td { border-bottom: none; }
+
+  /* Flag bullets for JD changes */
+  .flag-list { margin: 8px 0 16px 0; padding: 0; list-style: none; }
+  .flag-list li {
+    padding: 10px 14px 10px 42px;
+    position: relative;
+    margin-bottom: 8px;
+    background: #FFFBF7;
+    border-left: 3px solid #E87722;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #333;
+  }
+  .flag-list li::before {
+    content: '⚠';
+    position: absolute;
+    left: 12px;
+    color: #E87722;
+    font-size: 14px;
+  }
+
+  /* Closing dark block */
+  .closing {
+    background: #1B2B3B;
+    border-radius: 4px;
+    padding: 36px 48px;
+    margin-top: 28px;
+  }
+  .closing h2 { color: #fff; border-bottom-color: #E87722; }
+  .closing .info-table td { border-bottom-color: #2d3f50; color: #c8d6e0; }
+  .closing .info-table td:first-child { background: #243444; color: #fff; }
+  .closing .sig { margin-top: 28px; }
+  .closing .sig strong { color: #fff; font-size: 15px; display: block; }
+  .closing .sig span { color: #7a95a8; font-style: italic; font-size: 13px; }
+
+  @media print {
+    body { background: #fff; }
+    section, .closing { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .callout-bar, .callout-body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 32px 24px; }
+    section { padding: 24px; }
+    .info-table td:first-child { width: 130px; white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">
+    <strong>Raise + Recruit</strong>
+    <span>Built for charities, not for profit</span>
+  </div>
+  <div class="role-label">Search Briefing Notes</div>
+  <h1>Fundraising Manager</h1>
+  <div class="org">Thrive (Community Council for Somerset)</div>
+  <div class="meta">Briefing call: 7 May 2026 &nbsp;&bull;&nbsp; Head of Development and Communications</div>
+</div>
+
+<div class="wrapper">
+
+  <!-- ROLE AT A GLANCE -->
+  <section>
+    <h2>Role at a glance</h2>
+    <table class="info-table">
+      <tr><td>Organisation</td><td>Thrive (Community Council for Somerset)</td></tr>
+      <tr><td>Role title</td><td>Fundraising Manager</td></tr>
+      <tr><td>Salary</td><td>&pound;35,000 &ndash; &pound;40,000 FTE (board-confirmed ceiling; some flex possible if justified mid-search)</td></tr>
+      <tr><td>Hours</td><td>35 hours per week; flexible working considered</td></tr>
+      <tr><td>Contract</td><td>Permanent</td></tr>
+      <tr><td>Location</td><td>Hybrid &ndash; primarily home-based; minimum approx. one day per week in Taunton office</td></tr>
+      <tr><td>Geography</td><td>Somerset-based strongly preferred; Bristol commutable and acceptable. Bath likely too far given road access to Taunton.</td></tr>
+      <tr><td>Reports to</td><td>Head of Development and Communications</td></tr>
+      <tr><td>Manages</td><td>Fundraising Administrator (one direct report)</td></tr>
+      <tr><td>Weekly steering</td><td>Fridays at 09:30 &ndash; recurring 30-minute call</td></tr>
+    </table>
+  </section>
+
+  <!-- CRITICAL INSIGHT -->
+  <section>
+    <h2>Critical briefing insight &ndash; priority order of disciplines</h2>
+    <p>The single most important thing to understand about this role &ndash; and the aspect the existing job description does not yet reflect accurately &ndash; is the order of priority across the three fundraising disciplines.</p>
+
+    <div class="callout">
+      <div class="callout-bar"></div>
+      <div class="callout-body">
+        <div class="callout-label">Important &ndash; the priority order is the reverse of what the JD currently implies</div>
+        <p>The job description reads as a Trusts and Foundations role that will also cover community and individual giving. The confirmed priority is the reverse: community fundraising and individual giving are the primary requirement, with trusts and foundations as a secondary specialism that can be internally scaffolded if not fully formed in the appointed candidate.</p>
+      </div>
+    </div>
+
+    <p>Thrive can provide internal scaffolding for trusts and foundations &ndash; the Head of Development has a strong track record in that area, systems are in place, and a case for support already exists. What cannot easily be substituted is the personality, energy and relationship-building instinct required for community fundraising and individual giving. Those qualities are dispositional, not simply technical.</p>
+    <p>The previous postholder illustrates the risk of getting this wrong. A strong trusts and foundations officer with some breadth, the candidate ultimately lacked passion for the mission and found the community-facing elements of the role less natural. The priority for this search is to find someone for whom community and individual giving is in their DNA &ndash; energised by getting out into communities, telling stories, motivating supporters &ndash; who also has enough exposure to trusts and grants to grow into that aspect of the role over time.</p>
+  </section>
+
+  <!-- PEN PORTRAIT -->
+  <section>
+    <h2>The ideal candidate &ndash; pen portrait</h2>
+    <p>The following is a concise description of the person being sought. This profile will guide talent mapping and candidate assessment throughout the search.</p>
+
+    <div class="callout">
+      <div class="callout-bar"></div>
+      <div class="callout-body">
+        <div class="callout-label">In summary &ndash; who this person is</div>
+        <p>A community-minded fundraiser, probably working in a small or medium-sized charity, who has built their career around engaging people rather than writing applications. They are energised by events, supporter acquisition and individual giving. They have enough exposure to trusts and foundations to be credible and to grow &ndash; but they are not, at heart, a grant writer. They are motivated by mission, not money. They want breadth, autonomy and the chance to build something &ndash; not to be one specialist in a team of twenty. They are based in or around Somerset, or within easy reach of Taunton. And they genuinely care about the communities Thrive serves.</p>
+      </div>
+    </div>
+
+    <ul>
+      <li>Likely to be a Fundraising Manager, Community Fundraising Manager or Individual Giving Officer in a small-to-medium charity &ndash; probably feeling ready to step up or step across into something with more scope</li>
+      <li>May have come through events, challenge fundraising, community engagement or supporter development &ndash; rather than a trusts and foundations specialism</li>
+      <li>Will have some grant-writing experience (Awards for All level or above) but this will not be the core of their track record</li>
+      <li>Will be a natural relationship-builder &ndash; the kind of person frontline staff warm to and supporters trust</li>
+      <li>Likely frustrated by being siloed in a large charity or under-stretched in a small one &ndash; looking for the chance to lead something</li>
+      <li>Will need to see, quickly, that this role has genuine growth potential &ndash; in responsibility, salary and seniority &ndash; if the function delivers</li>
+      <li>Geographically: Somerset-based ideally, or within easy reach via Bristol. Bath likely too far. Must be willing to be in Taunton approximately one day per week</li>
+    </ul>
+    <p>This is not a profile that responds well to standard job advertisements. The right candidate is almost certainly in post, not actively looking, and will need to be approached directly with a compelling and honest account of the opportunity.</p>
+  </section>
+
+  <!-- CANDIDATE PROFILE -->
+  <section>
+    <h2>Candidate profile</h2>
+
+    <h3>Non-negotiable</h3>
+    <ul>
+      <li>Community fundraising and/or individual giving experience &ndash; the primary discipline. The ideal candidate is energised by supporter acquisition, challenge events, volunteer motivation and building individual donor relationships</li>
+      <li>Genuine mission alignment &ndash; authentic connection to community development, rural communities and grassroots, place-based work. Frontline staff will identify quickly whether a fundraiser genuinely cares about the work or is simply going through the motions</li>
+      <li>Donor acquisition instinct &ndash; the gap is not stewardship but getting people through the door in the first place. The right candidate thinks naturally about how to grow a supporter base from a low base</li>
+      <li>Autonomy and self-direction &ndash; the postholder will work closely with a small marketing function (2.5 FTE) and one direct report, and will need to take initiative without heavy infrastructure</li>
+    </ul>
+
+    <h3>Important but developable</h3>
+    <ul>
+      <li>Trusts and foundations experience &ndash; desirable but not a deal-breaker if the community and individual giving profile is strong. Minimum expectation: some exposure to grant applications at Awards for All level or above. The six-figure grants reference in the current JD should be treated as aspirational, not essential criteria</li>
+      <li>Line management &ndash; one direct report (Fundraising Administrator). Experience of managing or mentoring others is helpful but does not need to be extensive</li>
+      <li>Digital fundraising awareness &ndash; Thrive&rsquo;s marketing is currently almost entirely organic. The postholder will need to make the internal case for paid digital campaigns and understand how digital supports supporter acquisition. Specialist digital expertise is not required</li>
+    </ul>
+
+    <h3>Personality and values fit</h3>
+    <ul>
+      <li>A builder mentality &ndash; Thrive is starting from a very low base on individual and community fundraising. The right person will be excited by the opportunity to build something from the ground up, not daunted by it</li>
+      <li>Comfortable with ambiguity &ndash; Thrive is mid-pivot, moving from a statutory contract-delivery model to a more mission-led, community-supported charity. The environment is dynamic and not yet fully defined</li>
+      <li>Not primarily salary-motivated &ndash; the ceiling is &pound;40,000 and Thrive is candid that this is not a high-paying organisation by sector standards. The compelling offer is the breadth, the autonomy, and the chance to build a function from scratch with a credible growth trajectory</li>
+    </ul>
+  </section>
+
+  <!-- ORGANISATIONAL CONTEXT -->
+  <section>
+    <h2>Organisational context</h2>
+
+    <h3>Strategic background</h3>
+    <p>Thrive has historically been funded primarily through statutory contracts and grants, delivering quasi-public sector services under contract to Somerset Council. That model generated growth but created a structural imbalance &ndash; strong commissioned income alongside a hollowed-out core of unrestricted, mission-driven fundraising. Reserves have been drawn on over the last two years as a result.</p>
+    <p>The current chief executive has repositioned the strategy significantly. Thrive is now more selective about contracts, more explicit about its social change mission, and beginning to move into advocacy and campaigning. The investment in fundraising capacity &ndash; including this role &ndash; is a direct expression of that strategic pivot.</p>
+
+    <h3>The centenary year</h3>
+    <p>Thrive is in its centenary year (founded 1926). The centenary is not being deployed as a fundraising drive. The explicit goal is supporter and community movement building, with income conversion expected in subsequent years. Key centenary activities include:</p>
+    <ul>
+      <li>Community parties across Somerset (approximately 100 by end of June), modelled on the Macmillan coffee morning approach</li>
+      <li>A schools art competition for children and young people, launching imminently</li>
+      <li>A centenary ball in November &ndash; positioned as a dry run for future high-value and corporate engagement; break-even target only</li>
+      <li>A public launch event for existing partners and stakeholders</li>
+    </ul>
+    <p>The headline ambition for the centenary year: 2,000 actively interested supporters by year end, with conversion to regular giving as a secondary aspiration. Income generation is not the primary metric for 2026.</p>
+
+    <h3>Current fundraising position</h3>
+    <ul>
+      <li>Trusts and foundations: a reasonable track record exists; most activity has been led by the Head of Development and the chief officer to date; systems and a basic case for support are in place</li>
+      <li>Individual giving: minimal &ndash; a small number of regular givers, a couple of challenge event participants in the current year; the base is described internally as very low</li>
+      <li>Community fundraising: nascent; giving mechanisms exist (donate buttons, event pages) but there is no structured programme or donor acquisition pipeline</li>
+      <li>Legacy giving: a free wills offer is being promoted through services, with a view to building a small legacy pipeline over two to three years</li>
+      <li>High net worth and corporate: the Head of Development and chief officer intend to lead this area directly, drawing on existing local networks</li>
+    </ul>
+
+    <h3>Fundraising targets</h3>
+    <p>An overall fundraising target of approximately &pound;110,000 has been set for the current year across the whole function, covering grants, trusts and new income streams. A successful Reaching Communities bid &ndash; to be led by senior leadership &ndash; would contribute significantly to that figure. The Fundraising Manager is not expected to carry the full target but will be expected to demonstrate clear indicators of donor acquisition growth within the first six months.</p>
+  </section>
+
+  <!-- SUCCESS CRITERIA -->
+  <section>
+    <h2>Success criteria</h2>
+
+    <h3>Six months</h3>
+    <ul>
+      <li>Clear evidence that donor acquisition is beginning to grow &ndash; individuals coming onto the system as supporters or expressing interest in ongoing engagement</li>
+      <li>Grant applications progressed or submitted, picking up pipeline work already identified by the Head of Development</li>
+      <li>Early working relationships established with the marketing team and frontline staff</li>
+      <li>An informed view formed on the most effective donor acquisition mechanism for Thrive &ndash; direct mail, paid digital, community events or otherwise</li>
+    </ul>
+
+    <h3>Twelve months</h3>
+    <ul>
+      <li>A structured community fundraising programme in place &ndash; frameworks enabling supporters, staff and volunteers to fundraise on behalf of the organisation</li>
+      <li>Individual giving pipeline showing measurable growth from the current low base</li>
+      <li>First grant applications submitted and reported on</li>
+      <li>A credible internal case developing for the next fundraising hire &ndash; digital fundraising officer, legacies officer or similar</li>
+    </ul>
+
+    <h3>Two years</h3>
+    <ul>
+      <li>A materially improved split between statutory and commissioned income on one side, and unrestricted fundraising on the other</li>
+      <li>The Fundraising Manager established as a recognised function lead &ndash; potentially ready to step into a Head of Fundraising role as the team grows</li>
+      <li>A small legacy pipeline beginning to take shape</li>
+    </ul>
+  </section>
+
+  <!-- CULTURE AND EVP -->
+  <section>
+    <h2>Culture and candidate value proposition</h2>
+    <p>Thrive&rsquo;s culture was described across three distinct characteristics during the briefing:</p>
+    <p><strong>Genuine flexibility and family-friendliness.</strong> Thrive lives its values around kindness and compassion as an employer, and this commitment comes from the top of the organisation. This is consistently cited as the most distinctive aspect of the working environment.</p>
+    <p><strong>Psychological safety.</strong> An environment in which taking risks and occasionally failing is accepted. For a role that is fundamentally about building a new function from scratch, this matters &ndash; the postholder will need space to test, learn and iterate.</p>
+    <p><strong>Mission intensity.</strong> Thrive is increasingly mission-focused and will not suit a candidate who is disconnected from the organisation&rsquo;s purpose. Frontline staff will identify quickly whether a fundraiser is genuinely enthused by the work or simply gathering stories as a means to a fundraising ask.</p>
+
+    <div class="callout">
+      <div class="callout-bar"></div>
+      <div class="callout-body">
+        <div class="callout-label">Candidate proposition &ndash; key messages for outreach</div>
+        <p>This is a rare opportunity to build a fundraising function from the ground up, with genuine autonomy, a compelling centenary story, and a mission rooted directly in the communities of Somerset. The salary sits at the realistic end of the market for the sector in this region, but the journey, the breadth and the growth trajectory are genuinely compelling. For a fundraiser who wants to become a Head of Fundraising rather than a long-term specialist, this is a strong move.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH LOGISTICS -->
+  <section>
+    <h2>Search logistics</h2>
+    <table class="info-table">
+      <tr><td>Search timeline</td><td>Six-week retained search</td></tr>
+      <tr><td>Weekly review</td><td>Fridays at 09:30 &ndash; 30-minute call (recurring invite to follow)</td></tr>
+      <tr><td>Advertising</td><td>Targeted advert to run alongside proactive headhunting</td></tr>
+      <tr><td>Previous advertising</td><td>One advert placed by Thrive; did not generate suitable candidates</td></tr>
+      <tr><td>Geography focus</td><td>Somerset-based strongly preferred; Bristol commutable and acceptable. Bath considered too far given road access to Taunton.</td></tr>
+      <tr><td>Interview format</td><td>To be confirmed at shortlist stage</td></tr>
+      <tr><td>Target</td><td>Offer within six weeks of engagement</td></tr>
+    </table>
+  </section>
+
+  <!-- JD CHANGES -->
+  <section>
+    <h2>Recommended changes to the recruitment pack</h2>
+    <p>The job pack was confirmed as likely needing revision following the briefing. The following changes are recommended and should be agreed before the advert is finalised.</p>
+
+    <h3>Priority changes</h3>
+    <ul class="flag-list">
+      <li>Reorder the income stream priorities throughout the job description. The document currently leads with Trusts and Foundations and positions community and individual giving as secondary activity. This should be reversed: community fundraising, events and individual giving should be presented as the primary focus, with trusts and foundations as an important but supporting discipline.</li>
+      <li>Remove or significantly soften the reference to securing grants in excess of &pound;250,000. This was confirmed as not a deal-breaker and should not appear as a desirable criterion. In its current form it will deter strong candidates and misrepresents the actual requirement of the role.</li>
+      <li>Strengthen the mission and values language. The job description includes a reference to passion for the mission but it sits lightly on the page. It should be elevated and made more specific: genuine connection to community development, rural Somerset and grassroots social change.</li>
+    </ul>
+
+    <h3>Secondary changes</h3>
+    <ul class="flag-list">
+      <li>Add explicit reference to donor acquisition as a core responsibility. The current document addresses supporter journeys and stewardship but does not name acquisition clearly. Given that this is the primary gap and the primary measure of success at six months, it should be visible and prominent in the role description.</li>
+      <li>Clarify the hybrid working expectation accurately. The job pack currently states &lsquo;occasional office-based work in Taunton&rsquo;. The actual expectation is approximately one day per week in the Taunton office on a consistent basis. This should be stated clearly to avoid misalignment at offer stage.</li>
+      <li>Review the job title. Fundraising Manager is accurate but broad, and may not attract the right search behaviour from candidates with a community or individual giving background. A title such as Community and Individual Giving Manager &ndash; or similar &ndash; would better signal the actual priority of the role and should be discussed and agreed before the advert is placed.</li>
+    </ul>
+  </section>
+
+  <!-- ACTIONS -->
+  <div class="closing">
+    <h2>Actions</h2>
+    <table class="info-table">
+      <tr><td>Raise + Recruit</td><td>Send recurring Friday 09:30 call invite to client through to end of June</td></tr>
+      <tr><td>Raise + Recruit</td><td>Send briefing notes to client for review and sign-off</td></tr>
+      <tr><td>Raise + Recruit</td><td>Send Terms of Business</td></tr>
+      <tr><td>Raise + Recruit</td><td>Begin talent mapping once brief is confirmed</td></tr>
+      <tr><td>Thrive</td><td>Review job pack and send proposed tweaks to Raise + Recruit</td></tr>
+      <tr><td>Both</td><td>Agree final job title and JD amendments before advert goes live</td></tr>
+    </table>
+    <div class="sig">
+      <strong>John Austin</strong>
+      <span>Raise + Recruit</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
